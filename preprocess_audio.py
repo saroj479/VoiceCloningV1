@@ -6,8 +6,8 @@ import matplotlib.pyplot as plt
 import librosa.display
 
 # Directory containing your audio files
-AUDIO_DIR = "my_voice.py"
-OUTPUT_DIR = "Hello"
+AUDIO_DIR = "myvoice"
+OUTPUT_DIR = "preprocessed_data"
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 # Parameters
@@ -19,7 +19,7 @@ def preprocess_audio(file_path):
     y, sr = librosa.load(file_path, sr=sample_rate)
     
     # Generate mel-spectrogram
-    mel_spectrogram = librosa.feature.melspectrogram(y, sr=sr, n_mels=n_mels)
+    mel_spectrogram = librosa.feature.melspectrogram(y=y, sr=sr, n_mels=n_mels)
     log_mel_spectrogram = librosa.power_to_db(mel_spectrogram, ref=np.max)
     
     # Save the spectrogram
@@ -42,6 +42,7 @@ def process_all_files():
 
 if __name__ == "__main__":
     process_all_files()
+
 
 
 
