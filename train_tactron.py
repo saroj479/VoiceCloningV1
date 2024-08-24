@@ -71,7 +71,7 @@ for epoch in range(EPOCHS):
 
         total_loss += loss.item()
 
-    print(f"Epoch {epoch+1}/{EPOCHS}, Loss: {total_loss/len(dataloader)}")
+    print(f"Epoch {epoch+2}/{EPOCHS}, Loss: {total_loss/len(dataloader)}")
 
     # Save model checkpoint periodically
     if (epoch + 1) % 10 == 0:
